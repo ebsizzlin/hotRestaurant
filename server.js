@@ -21,11 +21,11 @@ app.get('/', function(req, res) {
 });
 
 app.get('/add', function (req, res) {
-    res.sendFile(path.join(__dirname, 'reservation.html'));
+    res.sendFile(path.join(__dirname, './reservation.html'));
 });
 
 app.get('/tables', function (req, res)  {
-    res.sendFile(path.join(__dirname, 'tables.html'));
+    res.sendFile(path.join(__dirname, './tables.html'));
 });
     //displays reservations
 app.get('/api/tables', function (req, res)  {
