@@ -7,7 +7,7 @@ var app = express();
 var PORT = process.env.PORT || 3001;
 
 //set-up Express to handle data parsing
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //data
@@ -20,12 +20,12 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/add', function (req, res) {
-    res.sendFile(path.join(__dirname, './reservation.html'));
+app.get('/reservation', function (req, res) {
+    res.sendFile(path.join(__dirname, 'reservation.html'));
 });
 
 app.get('/tables', function (req, res)  {
-    res.sendFile(path.join(__dirname, './tables.html'));
+    res.sendFile(path.join(__dirname, 'tables.html'));
 });
     //displays reservations
 app.get('/api/tables', function (req, res)  {
@@ -50,7 +50,7 @@ app.post('/api/reservation', function (req, res)    {
             full = true;
         }
     
-    res.json(newR);
+    return res.json(newR);
 });
 
 //clear arrays
